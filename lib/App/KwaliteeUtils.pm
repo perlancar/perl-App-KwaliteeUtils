@@ -64,6 +64,9 @@ This distributions provides the following command-line utilities:
 
 =head1 SEE ALSO
 
+Alternative to L<calc-kwalitee>: L<cpants_lint.pl> from L<App::CPANTS::Lint>,
+the "official" script, which again I only found after writing C<calc-kwalitee>.
+
 L<Module::CPANTS::Kwalitee>
 
 L<https://cpants.cpanauthors.org/kwalitee/>
