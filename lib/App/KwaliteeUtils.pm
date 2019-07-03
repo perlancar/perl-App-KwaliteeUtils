@@ -6,6 +6,7 @@ package App::KwaliteeUtils;
 use 5.010001;
 use strict;
 use warnings;
+use Module::CPANTS::Analyse;
 
 our %SPEC;
 
@@ -16,8 +17,8 @@ $SPEC{calc_kwalitee} = {
         dist => {
             summary => 'Distribution archive file (e.g. tarball) or directory',
             schema => 'pathname*',
-            req => 1,
             default => '.',
+            pos => 0,
             description => <<'_',
 
 Although a directory (top-level directory of an extracted Perl distribution) can
@@ -35,8 +36,6 @@ _
     },
 };
 sub calc_kwalitee {
-    require Module::CPANTS::Analyse;
-
     my %args = @_;
 
     my $mca = Module::CPANTS::Analyse->new({dist => $args{dist}});
